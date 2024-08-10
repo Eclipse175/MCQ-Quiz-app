@@ -1,0 +1,96 @@
+*{
+    font-family: 'Open Sauce One', sans-serif;
+    padding: 0;
+    margin : 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #171717;
+}
+header h1 {
+    color : #fff;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top : 2rem;
+}
+#question-text {
+    font-size: 1.2em;
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+#container {
+    display : flex;
+    justify-content : center;
+    align-items: center;
+    flex-direction: column;
+    margin-top : 4rem;
+}
+#question-container {
+    display : none;
+    /* the above attribute will be toggled in JS*/
+    background-color: #f0e68c;
+    border: 3px solid #8b4513;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.retro-button {
+    background-color: #DE6E4B;
+    border: 3px solid #E5D4CE;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 #7FD1B9;
+    cursor: pointer;
+    transition: all 0.1s ease;
+  }
+  
+  .retro-button:hover {
+    background-color: #E56399;
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #8b4513;
+  }
+  
+  .retro-button:active {
+    background-color: #d3d3d3;
+    transform: translate(3px, 3px);
+    box-shadow: none;
+  }
+
+  .button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.answer-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .button-container {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .answer-btn {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    header h1 {
+        font-size : 28px;
+    }
+  }
+  
