@@ -30,6 +30,17 @@ header {
     flex-direction: column;
     margin-top : 4rem;
 }
+h3 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background-color: #DE6E4B;
+  color: #fff;
+  border: 2px solid #E5D4CE;
+  border-radius: 5px;
+}
+
 #question-container {
     display : none;
     /* the above attribute will be toggled in JS*/
