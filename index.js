@@ -36,9 +36,12 @@ startGame.addEventListener('click', () => {
   questionContainer.style.display = 'block';
   startGame.style.display = 'none';
 })
+
+let index = Math.floor(Math.random() * questions.length)
+let current = questions[index]
+const correctAnswers = questions.map(question => question.answers[question.correctAnswer]);
+
 const questionRandomize = () => {
-  let index = Math.floor(Math.random() * questions.length)
-  let current = questions[index]
   questionText.innerText = current.question
 
   for (let i = 0; i < 4; i++) {
@@ -47,4 +50,33 @@ const questionRandomize = () => {
   }
 }
 questionRandomize();
+
+const answerButtons = document.querySelectorAll('.answer-btn')
+// Function to check the selected answer
+let selectedChoice;
+const correct = current.correctAnswer;
+// console.log(correct)
+
+answerButtons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    selectedChoice = index;
+    // console.log('you selected ' +  selectedChoice);
+    if (selectedChoice === correct) {
+      console.log('correct')
+      button.classList.add('correct')
+    } else {
+      console.log('wrong')
+      button.classList.add('wrong')
+    }
+    checkAnswer();
+  });
+});
+
+function checkAnswer() {
+  let choices = current.answers
+}
+
+// answerButtons.forEach(button => {
+//   button.addEventListener('click', checkAnswer)
+// })
 
