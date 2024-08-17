@@ -1,6 +1,7 @@
 const startGame = document.getElementById('start-game')
 const questionContainer = document.getElementById('question-container')
 const questionText = document.getElementById('question-text')
+const body = document.querySelector('body');
 
 const questions = [
   {
@@ -31,7 +32,6 @@ const questions = [
   // Add more questions here
 ];
 
-
 startGame.addEventListener('click', () => {
   questionContainer.style.display = 'block';
   startGame.style.display = 'none';
@@ -52,31 +52,32 @@ const questionRandomize = () => {
 questionRandomize();
 
 const answerButtons = document.querySelectorAll('.answer-btn')
-// Function to check the selected answer
+const nextButton = document.getElementById('next')
 let selectedChoice;
 const correct = current.correctAnswer;
-// console.log(correct)
 
 answerButtons.forEach((button, index) => {
   button.addEventListener('click', () => {
     selectedChoice = index;
-    // console.log('you selected ' +  selectedChoice);
+    answerButtons.forEach((button, index) => {
+      if (index !== correct) {
+          button.disabled = true;
+      } else if (index === correct) {
+        button.classList.add('correct')
+      }
+  });
     if (selectedChoice === correct) {
-      console.log('correct')
       button.classList.add('correct')
+      body.classList.add('correct') 
+    
     } else {
-      console.log('wrong')
       button.classList.add('wrong')
+      body.classList.add('wrong')
     }
-    checkAnswer();
   });
 });
 
-function checkAnswer() {
-  let choices = current.answers
+nextButton.addEventListener('click', loadNextQuestion);
+function loadNextQuestion() {
+ 
 }
-
-// answerButtons.forEach(button => {
-//   button.addEventListener('click', checkAnswer)
-// })
-

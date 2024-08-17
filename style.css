@@ -67,13 +67,12 @@ h3 {
     transition: all 0.1s ease;
   }
   
-  .retro-button:hover {
+  #start-game:hover {
     background-color: #E56399;
     transform: translate(2px, 2px);
     box-shadow: 1px 1px 0 #8b4513;
   }
-  
-  .retro-button:active {
+  #start-game:active {
     background-color: #d3d3d3;
     transform: translate(3px, 3px);
     box-shadow: none;
@@ -105,10 +104,42 @@ h3 {
     }
   }
   
-
 .correct {
   background-color : green;
 }
 .wrong {
   background-color : red;
+}
+
+.next-button {
+  background-color: #7FD1B9;
+  border: 3px solid #E5D4CE;
+  color: #171717;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #DE6E4B;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.next-button:hover {
+  background-color: #6ABFA6;
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #DE6E4B;
+}
+
+.next-button:active {
+  background-color: #5CAD95;
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.button-container {
+  border-bottom: 2px solid #8b4513;
+  padding-bottom: 20px;
 }
